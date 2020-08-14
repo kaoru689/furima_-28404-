@@ -37,7 +37,7 @@
 ### Association
 
 - belongs_to :user
-- has_one :address
+- belongs_to :buy
 
 
 
@@ -54,8 +54,9 @@
 | telephone_number | string     | null: false                    |
 | buy              | references | null: false, foreign_key: true |
 
+### Association
 
-
+- belongs_to :buy
 
 
 ##  buyテーブル
@@ -68,5 +69,6 @@
 
 - belongs_to :item
 - belongs_to :user
+- has_one :address
 
 
