@@ -9,14 +9,14 @@
 | first_name      | string     | null: false  |
 | last_name_kana  | string     | null: false  |
 | first_name_kana | string     | null: false  |
-| birthday_id     | integer    | null: false  |
+| birthday        | date       | null: false  |
 | email           | string     | null: false, |
 | password        | string     | null: false, |
 
 ### Association
 
 - has_many :items
-- has_one : address
+- has_many : address
 - belongs_to :buy
 
 ## items テーブル
@@ -32,7 +32,7 @@
 | prefecture_id    | integer    | null: false                    |
 | delivery_id      | integer    | null: false                    |
 | price            | integer    | null: false                    |
-| user_id          | references | null: false, foreign_key: true |
+| user             | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -53,22 +53,18 @@
 | house_number     | string     | null: false                    |
 | building_name    | string     |                                |
 | telephone_number | string     | null: false                    |
-| item_id          | references | null: false, foreign_key: true |
-| user_id          | references | null: false, foreign_key: true |
+| item             | references | null: false, foreign_key: true |
+| user             | references | null: false, foreign_key: true |
 
 
 
-### Association
-
-- belongs_to :buy
-- belongs_to :item
 
 
 ##  buyテーブル
 
-| user_id          | references | null: false, foreign_key: true |
-| item_id          | references | null: false, foreign_key: true |
-| address_id       | references | null: false, foreign_key: true |
+| user              | references | null: false, foreign_key: true |
+| item              | references | null: false, foreign_key: true |
+| address           | references | null: false, foreign_key: true |
 
 ### Association
 
