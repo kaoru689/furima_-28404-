@@ -31,13 +31,14 @@
 | prefecture_id    | integer    | null: false                    |
 | delivery_id      | integer    | null: false                    |
 | price            | integer    | null: false                    |
+| user             | references | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user
 - has_one :address
-- belongs_to :buy
+
 
 
 
@@ -59,14 +60,13 @@
 
 ##  buyテーブル
 
-| user              | references | null: false, foreign_key: true |
-| item              | references | null: false, foreign_key: true |
-| address           | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
+| item          | references | null: false, foreign_key: true |
+
 
 ### Association
 
-- has_one :address
-- has_one :item
-- has_one :user
+- belongs_to :item
+- belongs_to :user
 
 
