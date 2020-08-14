@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :items
-- has_many :buy
+- has_many :buys
 
 ## items テーブル
 
@@ -24,7 +24,7 @@
 | --------------   | ------     | ---------------------          |
 | image            | string     | null: false                    |
 | name             | string     | null: false                    |
-| item_detail      | text       | null: false                    |
+| detail           | text       | null: false                    |
 | category_id      | integer    | null: false                    |
 | condition_id     | integer    | null: false                    |
 | postage_id       | integer    | null: false                    |
@@ -37,7 +37,7 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :buy
+- has_one :buy
 
 
 
@@ -59,7 +59,7 @@
 - belongs_to :buy
 
 
-##  buyテーブル
+##  buysテーブル
 
 | user          | references | null: false, foreign_key: true |
 | item          | references | null: false, foreign_key: true |
