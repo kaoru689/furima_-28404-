@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'images/index'
   root "items#index"
 
+
   resources :users , only: [:new ]
+  resources :items , only:[:new]
 
 end
