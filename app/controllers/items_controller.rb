@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   # skip_before_action :authenticate_user! ,only: :index
   def index
-    @items = Item.all
+    @items = Items.all
     @items = Items.order("created_at DESC")
   end
   
@@ -9,19 +9,18 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
   
-  def create
-    @item = Item.new(item_params)
-    if @item.save
-      redirect_to root_path
-    else
-      render :new
-    end
-  end
+#   def create
+#     @item = Item.new(item_params)
+#     if @item.save
+#       redirect_to root_path
+#     else
+#       render :new
+#     end
+#   end
 
-  private
+#   private
 
-  def item_params
-    params.require(:item).permit(:item_id)
-  end
+#   def item_params
+#     # params.require(:items).permit(:image :name :detail :category_id :condition_id :postage_id :prefecture_id :delivery_id :price :user )
+#   end
 end
-
