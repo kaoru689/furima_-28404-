@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-    redirect_to action: :done
+  #   redirect_to action: :done
   end
 
   def show
