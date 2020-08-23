@@ -23,8 +23,13 @@ class ItemsController < ApplicationController
   end
 
   def update
+    begin
     @items = Item.find(params[:id])
     @items.update(item_params)
+  rescue => error
+    render :new
+  end
+
   end
    
 
