@@ -16,7 +16,22 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+    redirect_to action: :done
   end
+
+  def show
+  end
+
+  def update
+    begin
+    @items = Item.find(params[:id])
+    @items.update(item_params)
+  rescue => error
+    render :new
+  end
+
+  end
+   
 
   private
 
