@@ -16,10 +16,10 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-  #   redirect_to action: :done
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def update
