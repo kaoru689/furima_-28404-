@@ -29,8 +29,16 @@ class ItemsController < ApplicationController
   rescue => error
     render :new
   end
+end
 
+  def edit
+    begin
+      @items = Item.find(params[:id])
+      @items.edit(item_params)
+    rescue => error
+      render :show
   end
+end
    
 
   private
