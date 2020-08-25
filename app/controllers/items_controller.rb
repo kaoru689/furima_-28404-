@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  skip_before_action :authenticate_user! ,only: [:index, :show]
+  skip_before_action :authenticate_user! ,only: [:index, :show, :edit]
   def index
     @items = Item.all
     @items = Item.order("created_at DESC")
@@ -24,21 +24,17 @@ class ItemsController < ApplicationController
 
   def update
     begin
-    @items = Item.find(params[:id])
-    @items.update(item_params)
-  rescue => error
-    render :new
+      @items = Item.find(params[:id])
+      @items.update(item_params)
+      redirect_to item_path
+    rescue => error
+      render :new
   end
 end
 
   def edit
-    begin
-      @items = Item.find(params[:id])
-      @items.edit(item_params)
-    rescue => error
-      render :show
+    @item = Item.find(params[:id])
   end
-end
    
 
   private
