@@ -72,3 +72,4 @@
 - has_one :address
 
 
+
